@@ -1,0 +1,27 @@
+minimum_cumulusci_version: '3.50.0'
+project:
+    name: componentes
+    package:
+        name: componentes
+        namespace: componentes
+        api_version: '52.0'
+    dependencies:
+        - github: 'https://github.com/SalesforceFoundation/EDA'
+    git:
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/componentes/tests
+            options:
+                outputdir: robot/componentes/results
+
+    robot_testdoc:
+        options:
+            path: robot/componentes/tests
+            output: robot/componentes/doc/componentes_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
